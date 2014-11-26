@@ -1,0 +1,130 @@
+
+/*------ Clear Fix ------*/
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+/* Hides from IE-mac \*/
+
+* html .clearfix {
+	height: 1%;
+}
+
+.clearfix {
+	display: block;
+}
+
+/* End hide from IE-mac */
+/*----------------------*/
+
+
+
+body {
+    margin: 0px;
+}
+
+#emails{
+	background-color: aqua;
+}
+
+.completeMail, #emails div{
+	display: inline;
+}
+
+#emails li div:nth-child(3), #emails li div:nth-child(4){
+	font-weight: bold;
+}
+
+#emails li div:nth-child(3){
+	margin-right: 4%;
+}
+
+#emails li div:nth-child(4):after{
+	content: ' - ';
+}
+
+#emails li{
+	list-style: none;
+}
+
+
+
+.completeMail{
+	background-color: yellow;
+	float: left;
+	width: 100%;
+	height: 300px;
+}
+
+.completeMail div:nth-child(3), .completeMail div:nth-child(4){
+	font-weight: bold;
+}
+
+.completeMail div:nth-child(3){
+	margin-right: 4%;
+}
+
+.completeMail div:nth-child(4):after{
+	content: ' - ';
+}
+
+
+.sentConfirmation{
+	float: none;
+	position: absolute;
+	font-size: 2em;
+	padding: 1%;
+	bottom: 0px;
+	left: 400px;
+	background-color: blue;
+	border-radius: 10px;
+}
+
+
+#header{
+	width: 100%;
+	height: 20px;
+	background-color: red;
+}
+
+#sidebar{
+	width: 25%;
+	background-color: turquoise;
+}
+
+#main{
+	width: 72%;
+	background-color: blue;
+}
+
+#footer{
+	list-style: none;
+	width: 100%;
+	height: 100px;
+	background-color: pink;
+}
+
+#footer li{
+	display: inline-block;
+}
+
+
+#email{
+	display: block;
+	background-color: green;
+	height: 500px;
+}
+
+#blank-email{
+	display: block;
+	background-color: orange;
+	height: 500px;
+}
