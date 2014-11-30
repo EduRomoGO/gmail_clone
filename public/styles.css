@@ -66,15 +66,15 @@ li{
 	display: inline;
 }
 
-#emails li div:nth-child(3), #emails li div:nth-child(4){
+#emails li div:nth-child(4), #emails li div:nth-child(5){
 	font-weight: bold;
 }
 
-#emails li div:nth-child(3){
+#emails li div:nth-child(4){
 	margin-right: 4%;
 }
 
-#emails li div:nth-child(4):after{
+#emails li div:nth-child(5):after{
 	content: ' - ';
 }
 

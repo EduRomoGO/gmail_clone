@@ -11,6 +11,7 @@ function representMails (data) {
 function printMail (index, element) {
   $('#emails').prepend(
   '<li>' + 
+  '<input type="checkbox">' +
   '<div class="checked" data-checked="false"></div>' + 
   '<div class="starred" data-starred="' + element.starred + '"></div>' + 
   '<div class="from">' + element.from + '</div>' + 
@@ -21,7 +22,7 @@ function printMail (index, element) {
 
 
 
-$('#emails').delegate('li', 'click', function () {
+$('#emails').delegate('li div', 'click', function () {
 	$.get('/email/' + $(this).attr('data-id'), showMail);
 	console.log($(this).attr('data-id'));
 });
@@ -79,3 +80,10 @@ function hideWindow () {
 }
 
 
+$('#select-all').click(toggleSelectAllMails);
+var count = 0;
+function toggleSelectAllMails () {
+	var toggle = (count%2 === 0) ? true : false;
+	$('#emails input').prop('checked', toggle);	
+	count++;
+};
