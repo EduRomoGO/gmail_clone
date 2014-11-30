@@ -16,7 +16,7 @@
         <div id="compose"></div>
         <div id="labels">
           <ul id="main-labels">
-            <li>Inbox</li>
+            <li class="clickable">Inbox</li>
             <li>Starred</li>
             <li>Sent mail</li>
             <li>Drafts</li>
@@ -41,9 +41,9 @@
       </div>
       <div id="main">
         <ul id="email-actions">
-          <li id="select-all"></li>
-          <li id="check-emails"></li>
-          <li id="more"></li>
+          <li id="select-all">Select All</li>
+          <li id="check-emails">Check new mails</li>
+          <li id="newMail" class="clickable">New mail</li>
         </ul>
         <ul id="emails">
           <li data-id="1234">
@@ -84,15 +84,19 @@
       </ul>
     </div>
     <div id="blank-email">
-      <div id="blank-close"></div>
-      <div><label for="blank-to">To</label><input id="blank-to" name="to" type="text" value=""></div>
-      <div><label for="blank-from">From</label><input id="blank-from" name="from" type="text" value=""></div>
-      <div><label for="blank-subject">Subject</label><input id="blank-subject" name="subject" type="text" value=""></div>
+      <button type="button" class="clickable closeWindow">X</button>
+      
+      <div class="to"><label for="blank-to">To</label>
+      <input id="blank-to" name="to" type="text" value=""></div>
+     
+      <div><label for="blank-from">From</label>
+      <input id="blank-from" name="from" type="text" value=""></div>
+     
+      <div><label for="blank-subject">Subject</label>
+      <input id="blank-subject" name="subject" type="text" value=""></div>
       <div><textarea id="blank-content" name="content" rows="4" cols="50"></textarea></div>
-      <div id="blank-bottom">
-        <div id="send"></div>
-        <div id="trash"></div>
-      </div>
+      
+      <button type="button" class="clickable sendMail">Send</button>
     </div>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="gmail.js"></script>
