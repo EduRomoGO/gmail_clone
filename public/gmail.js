@@ -41,31 +41,41 @@ function showMail (data) {
 
 
 
-
-$('#last-activity').click(createMail);
+// dummy action
+$('.sendMail').click(createMail);
 function createMail () {
-	$.post('/email', function (data) {
-		$('#email').prepend( '<div class="sentConfirmation">' + data + '</div>' );
+
+	var createMailRequest = $.post('/email', function (data) {
+	var windowWidth = $(window).width();
+	var allElementesHeight = $('#email').height();
+	var horizontalPosition = (windowWidth/2) - 76;
+	var verticalPosition = (allElementesHeight/2) - 27;
+	$('.sentConfirmation').html(data)
+												.css('display', 'block')
+												.delay(600)
+												.css('left', horizontalPosition)
+												.css('top', verticalPosition);
+	})
+
+	createMailRequest.done(function(){
+		$('#blank-email').slideUp();
 	});
 }
-
 
 $('#email').delegate('.sentConfirmation', 'click', closeConfirmation);
 function closeConfirmation () {
 	$(this).remove();
 };
 
-
-
 $('#newMail').click(newMail);
 function newMail () {
-	var pos = $('#footer').position();
-	$('#blank-email').css('display', 'block').css('top', pos.top-162);
+	var footerPosition = $('#footer').position();
+	$('#blank-email').css('display', 'block').css('top', footerPosition.top-162);
 };
-
-
 
 $('.closeWindow').click(hideWindow);
 function hideWindow () {
 	$('#blank-email').css('display', 'none');
 }
+
+
