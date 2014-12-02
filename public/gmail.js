@@ -1,5 +1,6 @@
 
 $('#main-labels').first().click(checkForNewMails);
+$('#check-emails').click(checkForNewMails);
 function checkForNewMails () {
 		console.log('checkForNewMails');
 	$.get('/email/new', representMails);
