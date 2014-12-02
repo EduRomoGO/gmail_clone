@@ -1,6 +1,7 @@
 
-$('#main-labels:first-child').click(checkForNewMails);
+$('#main-labels').first().click(checkForNewMails);
 function checkForNewMails () {
+		console.log('checkForNewMails');
 	$.get('/email/new', representMails);
 }
 
@@ -49,11 +50,16 @@ function createMail () {
 	var createMailRequest = $.post('/email', function (data) {
 	var windowWidth = $(window).width();
 	var allElementesHeight = $('#email').height();
-	var horizontalPosition = (windowWidth/2) - 76;
-	var verticalPosition = (allElementesHeight/2) - 27;
+
+	var confirmationMessageWidth  = $('.sentConfirmation').outerWidth(true);
+	var confirmationMessageHeight = $('.sentConfirmation').outerHeight(true);
+		console.log($('.sentConfirmation').outerHeight());
+		console.log($('.sentConfirmation').outerWidth());
+	var horizontalPosition = (windowWidth - confirmationMessageWidth)/2;
+	var verticalPosition = (allElementesHeight - confirmationMessageHeight)/2;
 	$('.sentConfirmation').html(data)
 												.css('display', 'block')
-												.delay(600)
+												.delay(750)
 												.css('left', horizontalPosition)
 												.css('top', verticalPosition);
 	})
@@ -86,4 +92,15 @@ function toggleSelectAllMails () {
 	var toggle = (count%2 === 0) ? true : false;
 	$('#emails input').prop('checked', toggle);	
 	count++;
+};
+
+$('.filterStarred').click(filterStarred);
+function filterStarred () {
+	console.log('click');
+	//$('.starred').data('starred', false).css('display', 'none');
+
+	var selected = $(".starred").filter(function(index) {
+		return $(this).data('starred', false);
+	});
+	selected.css('display', 'none');
 };

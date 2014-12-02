@@ -103,8 +103,12 @@ li{
 
 .sentConfirmation{
 	display: none;
+	width: 16%;
+	max-width: 200px;
+	min-width: 180px;
+	height: 10%;
 	float: none;
-	position: absolute;
+	margin: 0 auto;
 	font-size: 2em;
 	padding: 1%;
 	top: 0px;
