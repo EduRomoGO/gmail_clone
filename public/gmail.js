@@ -59,7 +59,7 @@ function createMail () {
 	var horizontalPosition = (windowWidth - confirmationMessageWidth)/2;
 	var verticalPosition = (allElementesHeight - confirmationMessageHeight)/2;
 	$('.sentConfirmation').html(data)
-												.css('display', 'block')
+												.show()
 												.delay(750)
 												.css('left', horizontalPosition)
 												.css('top', verticalPosition);
@@ -78,12 +78,12 @@ function closeConfirmation () {
 $('#newMail').click(newMail);
 function newMail () {
 	var footerPosition = $('#footer').position();
-	$('#blank-email').css('display', 'block').css('top', footerPosition.top-162);
+	$('#blank-email').show().css('top', footerPosition.top-162);
 };
 
 $('.closeWindow').click(hideWindow);
 function hideWindow () {
-	$('#blank-email').css('display', 'none');
+	$('#blank-email').show();
 }
 
 
@@ -98,10 +98,10 @@ function toggleSelectAllMails () {
 $('.filterStarred').click(filterStarred);
 function filterStarred () {
 	console.log('click');
-	//$('.starred').data('starred', false).css('display', 'none');
+	//$('.starred').data('starred', false).show();
 
 	var selected = $(".starred").filter(function(index) {
 		return $(this).data('starred', false);
 	});
-	selected.css('display', 'none');
+	selected.show();
 };
